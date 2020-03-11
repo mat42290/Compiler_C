@@ -1,0 +1,7 @@
+*.o
+result.txt
+*.h
+*.c
+*.output
+source.l
+comp
