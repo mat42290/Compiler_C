@@ -1,7 +1,9 @@
 *.o
-result.txt
+*.txt
+*.s
 *.h
-*.c
+*.yy.c
+*.tab.c
 *.output
 source.l
 comp
