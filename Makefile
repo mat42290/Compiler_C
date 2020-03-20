@@ -6,11 +6,11 @@ compiler: y.tab.o lex.yy.o symbol_table.o
 symbol_table.o: symbol_table.c
 	gcc -c symbol_table.c
 
-y.tab.c: c.y
-	yacc -d -v c.y
+y.tab.c: compiler.y
+	yacc -d -v compiler.y
 
-lex.yy.c: c.l
-	lex c.l
+lex.yy.c: compiler.l
+	lex compiler.l
 
 clean:
 	rm -rf compiler lex.yy.* y.tab.* *.o y.output
