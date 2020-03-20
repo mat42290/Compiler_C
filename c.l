@@ -1,13 +1,13 @@
 %{
-
-#include "y.tab.h"
-#include <stdlib.h>
-
+  #include "y.tab.h"
+  #include "symbol_table.h"
 %}
+
+%option noyywrap
 
 spaces [ \t\n]+
 
-%% 
+%%
 
 {spaces} ;
 
@@ -26,7 +26,6 @@ spaces [ \t\n]+
 "," return t_comma;
 ";" return t_sc;
 "printf" return t_printf;
-"return" return t_return;
 [0-9]+[eE][+]?[0-9]+ {
     yylval.Integer=(int)atof(yytext);
     return t_expnum;
@@ -36,20 +35,8 @@ spaces [ \t\n]+
     return t_num;
     }
 [a-zA-Z][a-zA-Z0-9_]* {
-    yylval.Variable = strdup(yytext);
+    strcpy(yylval.Variable, yytext);
     return t_var;
 };
 
-%% 
-
-int yywrap(void){}
-
-#if 0 
-int main(void)
-{
-    /* Call the lexer, then quit. */
-    yylex();
-    return 0;
-}
-#endif
-
+%%

@@ -1,1 +1,10 @@
-int main(){ int i, j,k,r;i =3;j=4;k=8;printf (i);r=(i+j)*(i+k/j);printf ( r ); return 0;}
+int main() {
+    int a = 10;
+    printf(a);
+    int b = 50;
+    int c = 5;
+    a = (a+c)*b;
+    b = b*2;
+    printf(b);
+    printf(a);
+}
