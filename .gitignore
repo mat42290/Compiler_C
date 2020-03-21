@@ -1,9 +1,10 @@
 *.o
 *.txt
 *.s
-*.h
-*.yy.c
-*.tab.c
+lex.yy.*
+y.tab.*
 *.output
 source.l
-comp
+compiler
+
+/.vscode
