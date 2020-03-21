@@ -6,5 +6,5 @@ y.tab.*
 *.output
 source.l
 compiler
-
+compiler.exe
 /.vscode
