@@ -1,4 +1,4 @@
-YACC := $(shell command -v yacc.exe 2> /dev/null)
+BISON := $(shell command -v bison 2> /dev/null)
 
 all: compiler
 
@@ -9,11 +9,11 @@ symbol_table.o: symbol_table.c
 	gcc -c symbol_table.c
 
 y.tab.c: compiler.y
-ifdef YACC
-	yacc -d -v compiler.yacc
+ifdef BISON
+	bison -d -v -y compiler.y
 endif
-ifndef YACC
-	bison -d -v -dy compiler.y
+ifndef BISON
+	yacc -d -v compiler.yacc
 endif
 
 lex.yy.c: compiler.l
